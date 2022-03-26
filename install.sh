@@ -7,7 +7,7 @@ w="\033[0m"
 mkdir -p $HOME/.config/clash
 echo ""
 
-echo -e $b"➤ "$w"Clash For Termux Non Root"
+echo -e $b"➤ "$w"Clash Rule Termux"
 echo ""
 
 echo -e $b"➤ "$w" prepare for installing dependencies ..."
