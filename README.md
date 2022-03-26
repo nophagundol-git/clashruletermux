@@ -22,7 +22,7 @@ cd
 - masuk ke Access Point Names (APN)
 - APN : Bebas (Reccomended : internet)
 - Proxy : 127.0.0.1
-- Port : 7890
+- Port : 7893
 
 # Kontak Saya
 
