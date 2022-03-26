@@ -6,7 +6,7 @@ apt update && apt install upgrade -y
 
 apt install git -y
 
-git clone https://github.com/lycoxz/ClashForTermux.git
+git clone 
 
 cd ClashForTermux && bash install.sh
 
@@ -28,3 +28,4 @@ cd
 
 https://facebook.com/nophagundol
 https://wa.me/+6282325589017
+t.me/+6282325589017
