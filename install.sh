@@ -40,19 +40,19 @@ echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" coppying Indonesian.yaml $g"Indonesian"$w
+echo -e $b"➤ "$w" coppying Indonesian.yaml "$g"Indonesian"$w
 cp -r -f Indonesian.yaml $HOME/.config/clash
 echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" coppying reject.yaml $g"reject"$w
+echo -e $b"➤ "$w" coppying reject.yaml "$g"reject"$w
 cp -r -f reject.yaml $HOME/.config/clash
 echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" coppying streaming.yaml $g"streaming"$w
+echo -e $b"➤ "$w" coppying streaming.yaml "$g"streaming"$w
 cp -r -f streaming.yaml $HOME/.config/clash
 echo ""
 
