@@ -28,4 +28,8 @@ cd
 
 https://facebook.com/nophagundol
 https://wa.me/+6282325589017
-t.me/+6282325589017
+https://t.me/+6282325589017
+
+Tembak Extra Unlimited Telkomsel 4 bulan
+Tembak Unlimitedmax 
+https://t.me/extraunlimitedtelkomsel
