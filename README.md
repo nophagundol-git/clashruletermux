@@ -8,7 +8,7 @@ apt install git -y
 
 git clone 
 
-cd ClashForTermux && bash install.sh
+cd clashruletermux && bash install.sh
 
 cd
 
