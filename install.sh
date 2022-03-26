@@ -65,6 +65,7 @@ echo ""
 sleep 2
 
 cd $HOME/.config/clash
+
 echo -e $b"➤ "$w" extracting yacd-dashbord: "$g"yacd"$w
 unzip yacd-gh-pages.zip
 echo ""
@@ -73,6 +74,6 @@ sleep 2
 rm -r -f yacd-gh-pages.zip
 sleep 2
 cd
-rm -r -f clashruletermux
+rm -rf clashruletermux
 clash
 clear
