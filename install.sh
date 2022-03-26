@@ -70,9 +70,9 @@ unzip yacd-gh-pages.zip
 echo ""
 
 sleep 2
-rm -rf yacd-gh-pages.zip
+rm -r -f yacd-gh-pages.zip
 sleep 2
 cd
-rm -rf clashruletermux
+rm -r -f clashruletermux
 clash
 clear
