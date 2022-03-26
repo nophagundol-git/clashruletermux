@@ -6,7 +6,7 @@ apt update && apt install upgrade -y
 
 apt install git -y
 
-git clone 
+git clone https://github.com/nophagundol-git/clashruletermux.git
 
 cd clashruletermux && bash install.sh
 
