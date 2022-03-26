@@ -34,6 +34,12 @@ echo ""
 
 sleep 2
 
+echo -e $b"➤ "$w" coppying config.yaml: "$g"config"$w
+cp -r -f config.yaml $HOME/.config/clash
+echo ""
+
+sleep 2
+
 echo -e $b"➤ "$w" coppying Indonesian.yaml $g"Indonesian"$w
 cp -r -f Indonesian.yaml $HOME/.config/clash
 echo ""
@@ -58,20 +64,13 @@ echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" coppying config.yaml: "$g"config"$w
-cp -r -f config.yaml $HOME/.config/clash
-echo ""
-
-sleep 2
-
 cd $HOME/.config/clash
-
 echo -e $b"➤ "$w" extracting yacd-dashbord: "$g"yacd"$w
 unzip yacd-gh-pages.zip
 echo ""
 
 sleep 2
-rm -r -f yacd-gh-pages.zip
+rm -rf yacd-gh-pages.zip
 sleep 2
 cd
 rm -rf clashruletermux
