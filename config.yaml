@@ -1,0 +1,96 @@
+#jangan di ganti, kecuali udh benar2 paham
+port: 7890
+socks-port: 7891
+ #redir-port: 7892
+ mixed-port: 7893
+ #tproxy-port: 7895
+ mode: global
+ log-level: info
+ allow-lan: true
+ external-controller: 0.0.0.0:9090
+ secret : ""
+ bind-address: "*"
+ external-ui: yacd-gh-pages
+ dns:
+   enable: true
+   ipv6: false
+   enhanced-mode: redir-host
+   listen: 127.0.0.1:7894
+   use-hosts: true
+   nameserver:
+     - https://cloudflare-dns.com/dns-query
+     - tls://1dot1dot1dot1.cloudflare-dns.com
+   fallback:
+     - https://dns.google/dns-query  
+proxies:
+  - {name: "[Trojan] ATHA", server: id-atha.bypass.id, port: 443, udp: true, type: trojan, password: 1c0-6934-11ec-865e-1577c1651679, sni: sv.scdn.com:p58-va.tiktokcdn.com, skip-cert-verify: true}
+  - {name: "[Trojan] BERKAH", server: id-biznet.bypass.id, port: 443, udp: true, type: trojan, password: d0f76f80-6934-11ec-a206-1577c1651679, sni: sv.scdn.com:p58-va.tiktokcdn.com, skip-cert-verify: true}
+  - {name: "[Trojan] SGGS", server: sggs.bypass.id, port: 443, udp: true, type: trojan, password: 0-6935-11b0-1577c1651679, sni: sv.scdn.com:p58-va.tiktokcdn.com, skip-cert-verify: true}
+  - {name: "[Trojan] CONTABO", server: trojan-contabo1.bypass.id, port: 443, udp: true, type: trojan, password: 3addf5f0-6935-11ec-bf911651679, sni: sv.scdn.com:p58-va.tiktokcdn.com, skip-cert-verify: true}
+
+proxy-groups:
+  - name: AKUN
+    type: select
+    proxies: 
+      - "[Trojan] ATHA"
+      - "[Trojan] BERKAH"
+      - "[Trojan] SGGS"
+      - "[Trojan] CONTABO"
+  - name: STREAMING  
+    type: select
+    proxies: 
+      - "[Trojan] ATHA"
+      - "[Trojan] BERKAH"
+      - "[Trojan] SGGS"
+      - "[Trojan] CONTABO"
+  - name: SOSIAL MEDIA
+    type: select
+    proxies: 
+      - "[Trojan] ATHA"
+      - "[Trojan] BERKAH"
+      - "[Trojan] SGGS"
+      - "[Trojan] CONTABO"
+  - name: INDONESIA
+    type: select
+    proxies: 
+      - "[Trojan] ATHA"
+      - "[Trojan] BERKAH"
+      - "[Trojan] SGGS"
+      - "[Trojan] CONTABO"
+  - name: ADS BLOCK
+    type: select
+    proxies:
+      - AKUN
+      - REJECT
+rule-providers:
+  indonesia:
+    behavior: "classical"
+    type: http
+    url: "https://bit.ly/33HTLvp"
+    interval: 86400
+    path: ./Indonesian.yaml
+  reject:
+    type: http
+    behavior: domain
+    url: "https://bit.ly/3mhQskP"
+    path: ./reject.yaml
+    interval: 86400    
+  sosmed:
+    type: http
+    behavior: "classical"
+    url: "https://bit.ly/3p7R7Y5"
+    path: ./sosmed.yaml
+    interval: 86400
+  streaming:
+    behavior: "classical"
+    type: http
+    url: "https://bit.ly/32f6Iw3"
+    #interval: 86400
+    path: ./streaming.yaml    
+
+rules:
+  - MATCH,indonesia,INDONESIA
+  - MATCH,reject,ADS BLOCK
+  - MATCH,sosmed,SOSIAL MEDIA
+  - MATCH,streaming,STREAMING
+  - MATCH,AKUN
